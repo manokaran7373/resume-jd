@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+env/
+*.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs and debugging
+*.log
+*.out
+*.err
+logs/
+debug.log
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage reports
+.coverage
+htmlcov/
+*.cover
+*.py,cover
+
+# MyPy type check cache
+.mypy_cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Database and secret files
+*.sqlite3
+*.db
+*.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Docker
+docker-compose.override.yml
+
+# Jupyter Notebook metadata
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Python virtualenv
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Celery task queue
+celerybeat-schedule
+__pycache__/
