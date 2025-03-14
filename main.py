@@ -1,4 +1,3 @@
-
 # from sentence_transformers import SentenceTransformer
 # from sklearn.metrics.pairwise import cosine_similarity
 # import numpy as np
@@ -23,7 +22,7 @@
 #         'experience': '2-3 years',
 #         'matching_factors': 'Backend architecture experience'
 #     },
-    
+
 #     # 🔹 Machine Learning & AI
 #     'ml_engineer': {
 #         'title': 'ML Engineer',
@@ -139,13 +138,13 @@
 #     def analyze_resume(self, resume_text):
 #         matches = []
 #         unmatched = []
-        
+
 #         candidate_name = self.extract_name_from_resume(resume_text)
-        
+
 #         for job_id, job in self.job_descriptions.items():
 #             job_text = f"{job['title']} {job['skills']} {job['experience']} {job['matching_factors']}"
 #             score = self.calculate_similarity_score(resume_text, job_text)
-            
+
 #             job_result = {
 #                 'title': job['title'],
 #                 'skills': job['skills'],
@@ -153,12 +152,12 @@
 #                 'matching_factors': job['matching_factors'],
 #                 'score': score
 #             }
-            
+
 #             if score >= 50:
 #                 matches.append(job_result)
 #             else:
 #                 unmatched.append(job_result)
-        
+
 #         return {
 #             'candidate_name': candidate_name,
 #             'matches': sorted(matches, key=lambda x: x['score'], reverse=True),
@@ -169,7 +168,7 @@
 #     print("\n📌 Resume Matching Report")
 #     print(f"\nCandidate Name: {results['candidate_name']}")
 #     print(f"Date: {datetime.now().strftime('%d-%m-%Y')}")
-    
+
 #     if results['matches']:
 #         print("\n🔹 Matched Job Positions (Score ≥ 50%)\n")
 #         for index, match in enumerate(results['matches'], 1):
@@ -179,7 +178,7 @@
 #             print(f"✅ Experience: {match['experience']}")
 #             print(f"✔ Key Matching Factors: {match['matching_factors']}")
 #             print("\n" + "-"*80 + "\n")
-    
+
 #     if results['unmatched']:
 #         print("\n❌ Unmatched Job Positions (Below 50%)")
 #         for job in results['unmatched']:
@@ -189,16 +188,16 @@
 #     print("\n" + "="*80)
 #     print("🚀 Welcome to Smart Resume-JD Matcher!")
 #     print("=" * 80 + "\n")
-    
+
 #     matcher = ResumeJDMatcher()
 #     resume_path = "C:/Users/USER/Downloads/KM_resume(2024).pdf"  # Update with actual path
-    
+
 #     print("📄 Processing resume...")
 #     resume_text = matcher.extract_resume_text(resume_path)
-    
+
 #     print("🔍 Analyzing matches...")
 #     results = matcher.analyze_resume(resume_text)
-    
+
 #     display_results(results)
 #     print("\n✨ Analysis Complete! ✨")
 #     print("=" * 80 + "\n")
@@ -207,36 +206,36 @@
 #     main()
 
 
-
-
-
 from resume_matcher import ResumeJDMatcher
 from display_results import display_results
 from logger import Logger
 
+
 def main():
-    logger = Logger('main')
+    logger = Logger("main")
     try:
-        print("\n" + "="*80)
+        print("\n" + "=" * 80)
         print("🚀 Welcome to Smart Resume-JD Matcher!")
         print("=" * 80 + "\n")
-        
+
         matcher = ResumeJDMatcher()
-        resume_path = "C:/Users/USER/Downloads/MCA_Yaseen.pdf"
-        
+        # resume_path = "path/to/your/resume.pdf"
+        resume_path = "C:/Users/USER/Downloads/Thiru_CV (1).docx"
+
         print("📄 Processing resume...")
         resume_text = matcher.extract_resume_text(resume_path)
-        
+
         print("🔍 Analyzing matches...")
         results = matcher.analyze_resume(resume_text)
-        
+
         display_results(results)
-        
+
     except Exception as e:
         logger.error(f"Main execution error: {e}")
         print(f"\n❌ An error occurred: {e}")
     finally:
         print("\n✨ Process completed ✨")
+
 
 if __name__ == "__main__":
     main()
