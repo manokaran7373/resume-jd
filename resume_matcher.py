@@ -1,12 +1,11 @@
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-from db_connector import JobDescriptionDB
-from logger import Logger
-import PyPDF2
-from PyPDF2 import PdfReader
 import docx
 import textract
 import re
+from logger import Logger
+from PyPDF2 import PdfReader
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+from db_connector import JobDescriptionDB
 
 
 class ResumeJDMatcher:
@@ -208,15 +207,6 @@ class ResumeJDMatcher:
                 "matches": sorted(matches, key=lambda x: x["score"], reverse=True),
                 "unmatched": sorted(unmatched, key=lambda x: x["score"], reverse=True),
             }
-
-            # # Display all results with detailed analysis
-            # # print("\n🎯 Detailed Matching Analysis:")
-            # for job in matches + unmatched:
-            #     print(f"\n📊 {job['title']}")
-            #     print(f"Match Score: {job['score']}%")
-            #     print(f"Skills Match: {len(job['analysis']['skills_match']['matched'])} of {len(job['analysis']['skills_match']['matched']) + len(job['analysis']['skills_match']['missing'])}")
-            #     print(f"Experience Match: {job['analysis']['experience_match']['found']} years vs required {job['analysis']['experience_match']['required']} years")
-
             return results
 
         except Exception as e:

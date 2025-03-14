@@ -1,17 +1,20 @@
-import mysql.connector
 import json
+import os
+import mysql.connector
 from logger import Logger
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class JobDescriptionDB:
     def __init__(self):
         self.logger = Logger("database")
         try:
             self.connection = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="new_password",
-                database="job_desc",
+                host=os.getenv("DB_HOST"),
+                user=os.getenv("DB_USER"),
+                password=os.getenv("DB_PASSWORD"),
+                database=os.getenv("DB_NAME"),
             )
             self.cursor = self.connection.cursor(dictionary=True)
             self.logger.info("Database connection established successfully")

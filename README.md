@@ -16,8 +16,13 @@ A powerful resume matching system that uses advanced NLP and ML techniques to an
 ## Installation 🛠️
 
 ```bash
-git clone https://github.com/yourusername/resume-matcher.git
-cd resume-matcher
+git clone https://github.com/manokaran7373/resume-jd.git
+cd resume-jd
+
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+# venv\Scripts\activate  # On Windows
+
 pip install -r requirements.txt
 ```
 
@@ -125,4 +130,4 @@ MIT License - see LICENSE.md
 ## Contact 📧
 
 Manokaran kumar - manokarank1916@gmail.com
-Project Link: https://github.com/yourusername/resume-matcher
+Project Link: https://github.com/manokaran7373/resume-jd.git
