@@ -35,15 +35,60 @@ pip install -r requirements.txt
 - mysql-connector-python
 - scikit-learn
 
-## Configuration ⚙️
+## Database Setup 📚
 
-1. Set up MySQL database:
+
+1. Create Database and Table:
 ```sql
 CREATE DATABASE job_desc;
 USE job_desc;
+
+CREATE TABLE job_desc_content (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    `key` VARCHAR(255) NOT NULL,
+    `value` JSON NOT NULL
+);
+```
+2. Insert Sample Job Description:
+```sql
+INSERT INTO job_desc_content (`key`, `value`) 
+VALUES ('job_description', '{
+    "job_title": "Machine Learning Developer",
+    "department": "Artificial Intelligence",
+    "company_name": "CTS Solutions",
+    "job_level": "Experienced",
+    "job_summary": "We are seeking a highly motivated and detail-oriented Machine Learning Developer to join our AI team. You will design, develop, and optimize machine learning models to solve real-world problems and enhance our business intelligence capabilities.",
+    "key_responsibilities": [
+        "Develop, test, and deploy machine learning models using Python and popular ML frameworks such as TensorFlow and PyTorch.",
+        "Collaborate with data scientists and engineers to preprocess and analyze large datasets for model training.",
+        "Optimize and fine-tune ML models for performance, accuracy, and scalability.",
+        "Implement and integrate ML algorithms into production systems, ensuring reliability and efficiency.",
+        "Stay updated with the latest advancements in AI/ML and apply innovative solutions to improve system capabilities."
+    ],
+    "required_skills": {
+        "programming_languages": ["Python"],
+        "frameworks": ["TensorFlow", "PyTorch", "Scikit-learn"],
+        "database": "PostgreSQL",
+        "AI_ML": true,
+        "version_control": "Git"
+    },
+    "education_requirements": "B.Sc or M.Sc in Computer Science, Artificial Intelligence, Data Science, or a related field",
+    "experience_requirements": {
+        "minimum_years": 3,
+        "full_stack_experience": false,
+        "database_experience": true,
+        "agile_experience": true
+    },
+    "preferred_qualifications": [
+        "Certifications in Machine Learning, Deep Learning, or Data Science",
+        "Experience with cloud-based ML platforms like AWS SageMaker, Google AI, or Azure ML",
+        "Familiarity with MLOps and model deployment"
+    ],
+    "work_location": "Remote"
+}');
 ```
 
-2. Configure database connection in `db_connector.py`:
+3. Configure database connection in `db_connector.py`:
 ```python
 host="localhost"
 user="your_username"
